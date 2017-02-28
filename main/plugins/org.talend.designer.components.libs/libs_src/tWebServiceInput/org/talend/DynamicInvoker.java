@@ -18,7 +18,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
-import java.util.Set;
 
 import javax.wsdl.Binding;
 import javax.wsdl.Operation;
@@ -338,9 +337,10 @@ public class DynamicInvoker {
         Map outputs = call.getOutputParams();
         HashMap map = new HashMap();
         
+        String name = null;
 		Object value = null;
 		if(outNames.size()>0){
-			String name = (String) outNames.get(0);
+            name = (String) outNames.get(0);
 		    value = outputs.get(name);
 		}
 
