@@ -196,7 +196,6 @@ public class BDJobReArchieveCreator {
             jarbuilder.setFatJar(true);
         } else if (isSparkWithYarnClusterMode()) {
             jarbuilder.setFatJar(false);
-            // Copy context properties
             if (isSparkWithYarnClusterMode()) {
                 // Copy contexts (*.properties)
                 HashSet<FilterInfo> propertiesFilter = new HashSet<FilterInfo>(Arrays.asList(new FilterInfo(null,
