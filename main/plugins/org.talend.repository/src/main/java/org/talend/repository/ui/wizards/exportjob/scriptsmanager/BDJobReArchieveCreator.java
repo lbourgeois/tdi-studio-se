@@ -124,7 +124,6 @@ public class BDJobReArchieveCreator {
                 }
             }
         }
-
         return isStormJob || isSparkWithHDInsight;
     }
 
@@ -219,7 +218,6 @@ public class BDJobReArchieveCreator {
     }
 
     public void create(File file, boolean isExport) {
-
         if (file == null || !file.exists() || (isExport && !file.isFile()) || fatherProcessItem == null) {
             return;
         }
@@ -236,7 +234,6 @@ public class BDJobReArchieveCreator {
         JavaJobExportReArchieveCreator creator = new JavaJobExportReArchieveCreator(file.getAbsolutePath(), label);
         String jobJarName = JavaResourcesHelper.getJobJarName(property.getLabel(), property.getVersion())
                 + FileExtensions.JAR_FILE_SUFFIX;
-
         try {
             if (isExport) {
                 // If we are in an export context, we first unzip the archive, then we modify the jar.
@@ -261,7 +258,6 @@ public class BDJobReArchieveCreator {
                 creator.deleteTempFiles(); // clean temp folder
                 File jarTmpFolder = new File(creator.getTmpFolder(), "jar-" + label + "_" + version); //$NON-NLS-1$ //$NON-NLS-2$
                 jarTmpFolder.mkdirs();
-
                 if (GlobalServiceRegister.getDefault().isServiceRegistered(IRunProcessService.class)) {
                     IRunProcessService service = (IRunProcessService) GlobalServiceRegister.getDefault().getService(
                             IRunProcessService.class);
